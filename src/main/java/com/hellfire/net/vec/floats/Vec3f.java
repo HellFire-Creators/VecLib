@@ -1,6 +1,7 @@
 package com.hellfire.net.vec.floats;
 
 import com.hellfire.net.vec.IVec;
+import com.hellfire.net.vec.doubles.Vec2d;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Range;
 
@@ -23,6 +24,12 @@ public class Vec3f implements IVec<Float, Vec3f> {
         this.x = x;
         this.y = y;
         this.z = z;
+    }
+
+    public Vec3f(final @NotNull Vec3f vec) {
+        this.x = vec.x;
+        this.y = vec.y;
+        this.z = vec.z;
     }
 
     public Vec3f() {

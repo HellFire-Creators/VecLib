@@ -1,6 +1,7 @@
 package com.hellfire.net.vec.longs;
 
 import com.hellfire.net.vec.IVec;
+import com.hellfire.net.vec.doubles.Vec2d;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Range;
 
@@ -23,6 +24,12 @@ public class Vec3l implements IVec<Long, Vec3l> {
         this.x = x;
         this.y = y;
         this.z = z;
+    }
+
+    public Vec3l(final @NotNull Vec3l vec) {
+        this.x = vec.x;
+        this.y = vec.y;
+        this.z = vec.z;
     }
 
     public Vec3l() {

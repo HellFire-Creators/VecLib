@@ -27,6 +27,13 @@ public class Vec4d implements IVec<Double, Vec4d> {
         this.w = w;
     }
 
+    public Vec4d(final @NotNull Vec4d vec) {
+        this.x = vec.x;
+        this.y = vec.y;
+        this.z = vec.z;
+        this.w = vec.w;
+    }
+
     public Vec4d() {
         this(0, 0, 0, 0);
     }

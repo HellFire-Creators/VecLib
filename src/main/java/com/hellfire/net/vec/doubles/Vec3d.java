@@ -25,6 +25,12 @@ public class Vec3d implements IVec<Double, Vec3d> {
         this.z = z;
     }
 
+    public Vec3d(final @NotNull Vec3d vec) {
+        this.x = vec.x;
+        this.y = vec.y;
+        this.z = vec.z;
+    }
+
     public Vec3d() {
         this(0, 0, 0);
     }

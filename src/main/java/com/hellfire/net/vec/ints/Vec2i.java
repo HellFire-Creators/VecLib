@@ -1,6 +1,7 @@
 package com.hellfire.net.vec.ints;
 
 import com.hellfire.net.vec.IVec;
+import com.hellfire.net.vec.doubles.Vec2d;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Range;
 
@@ -21,6 +22,11 @@ public class Vec2i implements IVec<Integer, Vec2i> {
     public Vec2i(int x, int y) {
         this.x = x;
         this.y = y;
+    }
+
+    public Vec2i(final @NotNull Vec2i vec) {
+        this.x = vec.x;
+        this.y = vec.y;
     }
 
     public Vec2i() {

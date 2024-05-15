@@ -1,6 +1,7 @@
 package com.hellfire.net.vec.longs;
 
 import com.hellfire.net.vec.IVec;
+import com.hellfire.net.vec.doubles.Vec2d;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Range;
 
@@ -25,6 +26,13 @@ public class Vec4l implements IVec<Long, Vec4l> {
         this.y = y;
         this.z = z;
         this.w = w;
+    }
+
+    public Vec4l(final @NotNull Vec4l vec) {
+        this.x = vec.x;
+        this.y = vec.y;
+        this.z = vec.z;
+        this.w = vec.w;
     }
 
     public Vec4l() {
