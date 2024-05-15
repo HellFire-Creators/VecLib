@@ -10,7 +10,7 @@ public class Vec3f implements IVec<Float, Vec3f> {
     private static final int NUM_COMPONENTS = 3;
     public static final Vec3f ZERO = new Vec3f(0, 0, 0);
 
-    private final float x, y, z;
+    public final float x, y, z;
 
     public Vec3f(final float[] comps) {
         if (comps.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");

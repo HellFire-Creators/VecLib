@@ -10,7 +10,7 @@ public class Vec2i implements IVec<Integer, Vec2i> {
     private static final int NUM_COMPONENTS = 2;
     public static final Vec2i ZERO = new Vec2i(0, 0);
 
-    private final int x, y;
+    public final int x, y;
 
     public Vec2i(final int[] comps) {
         if (comps.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");

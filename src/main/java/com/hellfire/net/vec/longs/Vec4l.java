@@ -10,7 +10,7 @@ public class Vec4l implements IVec<Long, Vec4l> {
     private static final int NUM_COMPONENTS = 4;
     public static final Vec4l ZERO = new Vec4l(0, 0, 0, 0);
 
-    private final long x, y, z, w;
+    public final long x, y, z, w;
 
     public Vec4l(final long[] comps) {
         if (comps.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");

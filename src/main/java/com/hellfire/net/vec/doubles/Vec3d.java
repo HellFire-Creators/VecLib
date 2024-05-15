@@ -10,7 +10,7 @@ public class Vec3d implements IVec<Double, Vec3d> {
     private static final int NUM_COMPONENTS = 3;
     public static final Vec3d ZERO = new Vec3d(0, 0, 0);
 
-    private final double x, y, z;
+    public final double x, y, z;
 
     public Vec3d(final double[] comps) {
         if (comps.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");

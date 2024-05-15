@@ -10,7 +10,7 @@ public class Vec2d implements IVec<Double, Vec2d> {
     private static final int NUM_COMPONENTS = 2;
     public static final Vec2d ZERO = new Vec2d(0, 0);
 
-    private final double x, y;
+    public final double x, y;
 
     public Vec2d(final double[] comps) {
         if (comps.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");
