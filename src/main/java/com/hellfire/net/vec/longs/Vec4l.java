@@ -201,4 +201,9 @@ public class Vec4l implements IVec<Long, Vec4l> {
     public @NotNull Vec4l zero() {
         return ZERO;
     }
+
+    @Override
+    public @NotNull Vec4l clone() {
+        return new Vec4l(x, y, z, w);
+    }
 }

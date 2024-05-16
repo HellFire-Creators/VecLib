@@ -28,13 +28,6 @@ public class Vec4f implements IVec<Float, Vec4f> {
         this.w = w;
     }
 
-    public Vec4f(final @NotNull Vec4f vec) {
-        this.x = vec.x;
-        this.y = vec.y;
-        this.z = vec.z;
-        this.w = vec.w;
-    }
-
     public Vec4f() {
         this(0, 0, 0, 0);
     }
@@ -200,5 +193,10 @@ public class Vec4f implements IVec<Float, Vec4f> {
     @Override
     public @NotNull Vec4f zero() {
         return ZERO;
+    }
+
+    @Override
+    public @NotNull Vec4f clone() {
+        return new Vec4f(x, y, z, w);
     }
 }

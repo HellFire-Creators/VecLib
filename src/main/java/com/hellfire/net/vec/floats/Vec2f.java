@@ -24,11 +24,6 @@ public class Vec2f implements IVec<Float, Vec2f> {
         this.y = y;
     }
 
-    public Vec2f(final @NotNull Vec2f vec) {
-        this.x = vec.x;
-        this.y = vec.y;
-    }
-
     public Vec2f() {
         this(0, 0);
     }
@@ -186,5 +181,10 @@ public class Vec2f implements IVec<Float, Vec2f> {
     @Override
     public @NotNull Vec2f zero() {
         return ZERO;
+    }
+
+    @Override
+    public @NotNull Vec2f clone() {
+        return new Vec2f(x, y);
     }
 }

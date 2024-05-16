@@ -187,4 +187,9 @@ public class Vec2l implements IVec<Long, Vec2l> {
     public @NotNull Vec2l zero() {
         return ZERO;
     }
+
+    @Override
+    public @NotNull Vec2l clone() {
+        return new Vec2l(x, y);
+    }
 }

@@ -26,12 +26,6 @@ public class Vec3f implements IVec<Float, Vec3f> {
         this.z = z;
     }
 
-    public Vec3f(final @NotNull Vec3f vec) {
-        this.x = vec.x;
-        this.y = vec.y;
-        this.z = vec.z;
-    }
-
     public Vec3f() {
         this(0, 0, 0);
     }
@@ -193,5 +187,10 @@ public class Vec3f implements IVec<Float, Vec3f> {
     @Override
     public @NotNull Vec3f zero() {
         return ZERO;
+    }
+
+    @Override
+    public @NotNull Vec3f clone() {
+        return new Vec3f(x, y, z);
     }
 }

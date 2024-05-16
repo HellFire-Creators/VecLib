@@ -24,11 +24,6 @@ public class Vec2i implements IVec<Integer, Vec2i> {
         this.y = y;
     }
 
-    public Vec2i(final @NotNull Vec2i vec) {
-        this.x = vec.x;
-        this.y = vec.y;
-    }
-
     public Vec2i() {
         this(0, 0);
     }
@@ -186,5 +181,10 @@ public class Vec2i implements IVec<Integer, Vec2i> {
     @Override
     public @NotNull Vec2i zero() {
         return ZERO;
+    }
+
+    @Override
+    public @NotNull Vec2i clone() {
+        return new Vec2i(x, y);
     }
 }

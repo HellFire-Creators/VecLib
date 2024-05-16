@@ -86,4 +86,7 @@ public interface IVec<N extends Number & Comparable<N>, T extends IVec<N, ?>> {
 
     @Override
     boolean equals(Object o);
+
+    @NotNull
+    T clone();
 }

@@ -23,11 +23,6 @@ public class Vec2d implements IVec<Double, Vec2d> {
         this.y = y;
     }
 
-    public Vec2d(final @NotNull Vec2d vec) {
-        this.x = vec.x;
-        this.y = vec.y;
-    }
-
     public Vec2d() {
         this(0, 0);
     }
@@ -185,5 +180,10 @@ public class Vec2d implements IVec<Double, Vec2d> {
     @Override
     public @NotNull Vec2d zero() {
         return ZERO;
+    }
+
+    @Override
+    public @NotNull Vec2d clone() {
+        return new Vec2d(x, y);
     }
 }

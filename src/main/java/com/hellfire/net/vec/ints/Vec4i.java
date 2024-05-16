@@ -28,13 +28,6 @@ public class Vec4i implements IVec<Integer, Vec4i> {
         this.w = w;
     }
 
-    public Vec4i(final @NotNull Vec4i vec) {
-        this.x = vec.x;
-        this.y = vec.y;
-        this.z = vec.z;
-        this.w = vec.w;
-    }
-
     public Vec4i() {
         this(0, 0, 0, 0);
     }
@@ -200,5 +193,10 @@ public class Vec4i implements IVec<Integer, Vec4i> {
     @Override
     public @NotNull Vec4i zero() {
         return ZERO;
+    }
+
+    @Override
+    public @NotNull Vec4i clone() {
+        return new Vec4i(x, y, z, w);
     }
 }

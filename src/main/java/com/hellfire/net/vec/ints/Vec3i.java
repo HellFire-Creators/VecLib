@@ -26,12 +26,6 @@ public class Vec3i implements IVec<Integer, Vec3i> {
         this.z = z;
     }
 
-    public Vec3i(final @NotNull Vec3i vec) {
-        this.x = vec.x;
-        this.y = vec.y;
-        this.z = vec.z;
-    }
-
     public Vec3i() {
         this(0, 0, 0);
     }
@@ -193,5 +187,10 @@ public class Vec3i implements IVec<Integer, Vec3i> {
     @Override
     public @NotNull Vec3i zero() {
         return ZERO;
+    }
+
+    @Override
+    public @NotNull Vec3i clone() {
+        return new Vec3i(x, y, z);
     }
 }
