@@ -1,11 +1,12 @@
 package com.hellfire.net.vec.longs;
 
 import com.hellfire.net.vec.IVec;
+import com.hellfire.net.vec.ints.Vec2i;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Range;
 
 /* Created by Conor on 15.05.2024 */
-public class Vec3l implements IVec<Long, Vec3l> {
+public class Vec3l extends IVec<Long, Vec3l> {
 
     private static final int NUM_COMPONENTS = 3;
     public static final Vec3l ZERO = new Vec3l(0, 0, 0);

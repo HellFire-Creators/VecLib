@@ -5,7 +5,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Range;
 
 /* Created by Conor on 15.05.2024 */
-public class Vec2i implements IVec<Integer, Vec2i> {
+public class Vec2i extends IVec<Integer, Vec2i> {
+
 
     private static final int NUM_COMPONENTS = 2;
     public static final Vec2i ZERO = new Vec2i(0, 0);

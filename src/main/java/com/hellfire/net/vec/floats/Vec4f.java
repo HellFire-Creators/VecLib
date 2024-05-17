@@ -5,7 +5,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Range;
 
 /* Created by Conor on 15.05.2024 */
-public class Vec4f implements IVec<Float, Vec4f> {
+public class Vec4f extends IVec<Float, Vec4f> {
 
     private static final int NUM_COMPONENTS = 4;
     public static final Vec4f ZERO = new Vec4f(0, 0, 0, 0);

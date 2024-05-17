@@ -5,7 +5,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Range;
 
 /* Created by Conor on 15.05.2024 */
-public class Vec4d implements IVec<Double, Vec4d> {
+public class Vec4d extends IVec<Double, Vec4d> {
 
     private static final int NUM_COMPONENTS = 4;
     public static final Vec4d ZERO = new Vec4d(0, 0, 0, 0);
