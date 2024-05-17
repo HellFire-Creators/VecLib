@@ -11,7 +11,7 @@ public interface IVec<N extends Number & Comparable<N>, T extends IVec<N, ?>> {
     T set(final int component, final @NotNull N val);
 
     @NotNull
-    T set(final @NotNull N[] valArr);
+    T set(final @NotNull N @NotNull [] valArr);
 
     @NotNull
     N get(final int component);
@@ -23,19 +23,19 @@ public interface IVec<N extends Number & Comparable<N>, T extends IVec<N, ?>> {
     T add(final @NotNull T vec);
 
     @NotNull
-    T add(final @NotNull N[] vecArr);
+    T add(final @NotNull N @NotNull ... vecArr);
 
     @NotNull
     T sub(final @NotNull T vec);
 
     @NotNull
-    T sub(final @NotNull N[] vecArr);
+    T sub(final @NotNull N @NotNull ... vecArr);
 
     @NotNull
     T mul(final @NotNull T vec);
 
     @NotNull
-    T mul(final @NotNull N[] vecArr);
+    T mul(final @NotNull N @NotNull ... vecArr);
 
     @NotNull
     T mul(final @NotNull N scale);

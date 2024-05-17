@@ -12,7 +12,7 @@ public class Vec2d implements IVec<Double, Vec2d> {
 
     public final double x, y;
 
-    public Vec2d(final double[] comps) {
+    public Vec2d(final double @NotNull ... comps) {
         if (comps.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");
         this.x = comps[0];
         this.y = comps[1];
@@ -46,7 +46,7 @@ public class Vec2d implements IVec<Double, Vec2d> {
     }
 
     @Override
-    public @NotNull Vec2d set(@NotNull Double[] valArr) {
+    public @NotNull Vec2d set(@NotNull Double @NotNull ... valArr) {
         if (valArr.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");
         return new Vec2d(valArr[0], valArr[1]);
     }
@@ -71,7 +71,7 @@ public class Vec2d implements IVec<Double, Vec2d> {
     }
 
     @Override
-    public @NotNull Vec2d add(@NotNull Double[] vecArr) {
+    public @NotNull Vec2d add(@NotNull Double @NotNull ... vecArr) {
         if (vecArr.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");
         return new Vec2d(x + vecArr[0], y + vecArr[1]);
     }
@@ -82,7 +82,7 @@ public class Vec2d implements IVec<Double, Vec2d> {
     }
 
     @Override
-    public @NotNull Vec2d sub(@NotNull Double[] vecArr) {
+    public @NotNull Vec2d sub(@NotNull Double @NotNull ... vecArr) {
         if (vecArr.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");
         return new Vec2d(x - vecArr[0], y - vecArr[1]);
     }
@@ -93,7 +93,7 @@ public class Vec2d implements IVec<Double, Vec2d> {
     }
 
     @Override
-    public @NotNull Vec2d mul(@NotNull Double[] vecArr) {
+    public @NotNull Vec2d mul(@NotNull Double @NotNull ... vecArr) {
         if (vecArr.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");
         return new Vec2d(x * vecArr[0], y * vecArr[1]);
     }

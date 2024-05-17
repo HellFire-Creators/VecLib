@@ -1,7 +1,6 @@
 package com.hellfire.net.vec.ints;
 
 import com.hellfire.net.vec.IVec;
-import com.hellfire.net.vec.doubles.Vec2d;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Range;
 
@@ -13,7 +12,7 @@ public class Vec2i implements IVec<Integer, Vec2i> {
 
     public final int x, y;
 
-    public Vec2i(final int[] comps) {
+    public Vec2i(final int @NotNull ... comps) {
         if (comps.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");
         this.x = comps[0];
         this.y = comps[1];
@@ -47,7 +46,7 @@ public class Vec2i implements IVec<Integer, Vec2i> {
     }
 
     @Override
-    public @NotNull Vec2i set(@NotNull Integer[] valArr) {
+    public @NotNull Vec2i set(@NotNull Integer @NotNull ... valArr) {
         if (valArr.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");
         return new Vec2i(valArr[0], valArr[1]);
     }
@@ -72,7 +71,7 @@ public class Vec2i implements IVec<Integer, Vec2i> {
     }
 
     @Override
-    public @NotNull Vec2i add(@NotNull Integer[] vecArr) {
+    public @NotNull Vec2i add(@NotNull Integer @NotNull ... vecArr) {
         if (vecArr.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");
         return new Vec2i(x + vecArr[0], y + vecArr[1]);
     }
@@ -83,7 +82,7 @@ public class Vec2i implements IVec<Integer, Vec2i> {
     }
 
     @Override
-    public @NotNull Vec2i sub(@NotNull Integer[] vecArr) {
+    public @NotNull Vec2i sub(@NotNull Integer @NotNull ... vecArr) {
         if (vecArr.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");
         return new Vec2i(x - vecArr[0], y - vecArr[1]);
     }
@@ -94,7 +93,7 @@ public class Vec2i implements IVec<Integer, Vec2i> {
     }
 
     @Override
-    public @NotNull Vec2i mul(@NotNull Integer[] vecArr) {
+    public @NotNull Vec2i mul(@NotNull Integer @NotNull ... vecArr) {
         if (vecArr.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");
         return new Vec2i(x * vecArr[0], y * vecArr[1]);
     }

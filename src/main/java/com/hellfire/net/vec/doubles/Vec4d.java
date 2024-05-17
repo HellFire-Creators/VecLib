@@ -12,7 +12,7 @@ public class Vec4d implements IVec<Double, Vec4d> {
 
     public final double x, y, z, w;
 
-    public Vec4d(final double[] comps) {
+    public Vec4d(final double @NotNull ... comps) {
         if (comps.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");
         this.x = comps[0];
         this.y = comps[1];
@@ -52,7 +52,7 @@ public class Vec4d implements IVec<Double, Vec4d> {
     }
 
     @Override
-    public @NotNull Vec4d set(@NotNull Double[] valArr) {
+    public @NotNull Vec4d set(@NotNull Double @NotNull ... valArr) {
         if (valArr.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");
         return new Vec4d(valArr[0], valArr[1], valArr[2], valArr[3]);
     }
@@ -79,7 +79,7 @@ public class Vec4d implements IVec<Double, Vec4d> {
     }
 
     @Override
-    public @NotNull Vec4d add(@NotNull Double[] vecArr) {
+    public @NotNull Vec4d add(@NotNull Double @NotNull ... vecArr) {
         if (vecArr.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");
         return new Vec4d(x + vecArr[0], y + vecArr[1], z + vecArr[2], w + vecArr[3]);
     }
@@ -90,7 +90,7 @@ public class Vec4d implements IVec<Double, Vec4d> {
     }
 
     @Override
-    public @NotNull Vec4d sub(@NotNull Double[] vecArr) {
+    public @NotNull Vec4d sub(@NotNull Double @NotNull ... vecArr) {
         if (vecArr.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");
         return new Vec4d(x - vecArr[0], y - vecArr[1], z - vecArr[2], w - vecArr[3]);
     }
@@ -101,7 +101,7 @@ public class Vec4d implements IVec<Double, Vec4d> {
     }
 
     @Override
-    public @NotNull Vec4d mul(@NotNull Double[] vecArr) {
+    public @NotNull Vec4d mul(@NotNull Double @NotNull ... vecArr) {
         if (vecArr.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");
         return new Vec4d(x * vecArr[0], y * vecArr[1], z * vecArr[2], w * vecArr[3]);
     }

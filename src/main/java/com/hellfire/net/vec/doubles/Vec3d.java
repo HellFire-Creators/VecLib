@@ -12,7 +12,7 @@ public class Vec3d implements IVec<Double, Vec3d> {
 
     public final double x, y, z;
 
-    public Vec3d(final double[] comps) {
+    public Vec3d(final double @NotNull ... comps) {
         if (comps.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");
         this.x = comps[0];
         this.y = comps[1];
@@ -49,7 +49,7 @@ public class Vec3d implements IVec<Double, Vec3d> {
     }
 
     @Override
-    public @NotNull Vec3d set(@NotNull Double[] valArr) {
+    public @NotNull Vec3d set(@NotNull Double @NotNull ... valArr) {
         if (valArr.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");
         return new Vec3d(valArr[0], valArr[1], valArr[2]);
     }
@@ -75,7 +75,7 @@ public class Vec3d implements IVec<Double, Vec3d> {
     }
 
     @Override
-    public @NotNull Vec3d add(@NotNull Double[] vecArr) {
+    public @NotNull Vec3d add(@NotNull Double @NotNull ... vecArr) {
         if (vecArr.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");
         return new Vec3d(x + vecArr[0], y + vecArr[1], z + vecArr[2]);
     }
@@ -86,7 +86,7 @@ public class Vec3d implements IVec<Double, Vec3d> {
     }
 
     @Override
-    public @NotNull Vec3d sub(@NotNull Double[] vecArr) {
+    public @NotNull Vec3d sub(@NotNull Double @NotNull ... vecArr) {
         if (vecArr.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");
         return new Vec3d(x - vecArr[0], y - vecArr[1], z - vecArr[2]);
     }
@@ -97,7 +97,7 @@ public class Vec3d implements IVec<Double, Vec3d> {
     }
 
     @Override
-    public @NotNull Vec3d mul(@NotNull Double[] vecArr) {
+    public @NotNull Vec3d mul(@NotNull Double @NotNull ... vecArr) {
         if (vecArr.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");
         return new Vec3d(x * vecArr[0], y * vecArr[1], z * vecArr[2]);
     }

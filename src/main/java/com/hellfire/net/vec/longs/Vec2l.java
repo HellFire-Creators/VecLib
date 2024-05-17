@@ -1,7 +1,6 @@
 package com.hellfire.net.vec.longs;
 
 import com.hellfire.net.vec.IVec;
-import com.hellfire.net.vec.doubles.Vec2d;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Range;
 
@@ -13,7 +12,7 @@ public class Vec2l implements IVec<Long, Vec2l> {
 
     public final long x, y;
 
-    public Vec2l(final long[] comps) {
+    public Vec2l(final long @NotNull ... comps) {
         if (comps.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");
         this.x = comps[0];
         this.y = comps[1];
@@ -22,11 +21,6 @@ public class Vec2l implements IVec<Long, Vec2l> {
     public Vec2l(long x, long y) {
         this.x = x;
         this.y = y;
-    }
-
-    public Vec2l(final @NotNull Vec2l vec) {
-        this.x = vec.x;
-        this.y = vec.y;
     }
 
     public Vec2l() {
@@ -52,7 +46,7 @@ public class Vec2l implements IVec<Long, Vec2l> {
     }
 
     @Override
-    public @NotNull Vec2l set(@NotNull Long[] valArr) {
+    public @NotNull Vec2l set(@NotNull Long @NotNull ... valArr) {
         if (valArr.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");
         return new Vec2l(valArr[0], valArr[1]);
     }
@@ -77,7 +71,7 @@ public class Vec2l implements IVec<Long, Vec2l> {
     }
 
     @Override
-    public @NotNull Vec2l add(@NotNull Long[] vecArr) {
+    public @NotNull Vec2l add(@NotNull Long @NotNull ... vecArr) {
         if (vecArr.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");
         return new Vec2l(x + vecArr[0], y + vecArr[1]);
     }
@@ -88,7 +82,7 @@ public class Vec2l implements IVec<Long, Vec2l> {
     }
 
     @Override
-    public @NotNull Vec2l sub(@NotNull Long[] vecArr) {
+    public @NotNull Vec2l sub(@NotNull Long @NotNull ... vecArr) {
         if (vecArr.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");
         return new Vec2l(x - vecArr[0], y - vecArr[1]);
     }
@@ -99,7 +93,7 @@ public class Vec2l implements IVec<Long, Vec2l> {
     }
 
     @Override
-    public @NotNull Vec2l mul(@NotNull Long[] vecArr) {
+    public @NotNull Vec2l mul(@NotNull Long @NotNull ... vecArr) {
         if (vecArr.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");
         return new Vec2l(x * vecArr[0], y * vecArr[1]);
     }

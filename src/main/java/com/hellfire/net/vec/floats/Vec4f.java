@@ -1,7 +1,6 @@
 package com.hellfire.net.vec.floats;
 
 import com.hellfire.net.vec.IVec;
-import com.hellfire.net.vec.doubles.Vec2d;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Range;
 
@@ -13,7 +12,7 @@ public class Vec4f implements IVec<Float, Vec4f> {
 
     public final float x, y, z, w;
 
-    public Vec4f(final float[] comps) {
+    public Vec4f(final float @NotNull ... comps) {
         if (comps.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");
         this.x = comps[0];
         this.y = comps[1];
@@ -53,7 +52,7 @@ public class Vec4f implements IVec<Float, Vec4f> {
     }
 
     @Override
-    public @NotNull Vec4f set(@NotNull Float[] valArr) {
+    public @NotNull Vec4f set(@NotNull Float @NotNull ... valArr) {
         if (valArr.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");
         return new Vec4f(valArr[0], valArr[1], valArr[2], valArr[3]);
     }
@@ -80,7 +79,7 @@ public class Vec4f implements IVec<Float, Vec4f> {
     }
 
     @Override
-    public @NotNull Vec4f add(@NotNull Float[] vecArr) {
+    public @NotNull Vec4f add(@NotNull Float @NotNull ... vecArr) {
         if (vecArr.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");
         return new Vec4f(x + vecArr[0], y + vecArr[1], z + vecArr[2], w + vecArr[3]);
     }
@@ -91,7 +90,7 @@ public class Vec4f implements IVec<Float, Vec4f> {
     }
 
     @Override
-    public @NotNull Vec4f sub(@NotNull Float[] vecArr) {
+    public @NotNull Vec4f sub(@NotNull Float @NotNull ... vecArr) {
         if (vecArr.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");
         return new Vec4f(x - vecArr[0], y - vecArr[1], z - vecArr[2], w - vecArr[3]);
     }
@@ -102,7 +101,7 @@ public class Vec4f implements IVec<Float, Vec4f> {
     }
 
     @Override
-    public @NotNull Vec4f mul(@NotNull Float[] vecArr) {
+    public @NotNull Vec4f mul(@NotNull Float @NotNull ... vecArr) {
         if (vecArr.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");
         return new Vec4f(x * vecArr[0], y * vecArr[1], z * vecArr[2], w * vecArr[3]);
     }

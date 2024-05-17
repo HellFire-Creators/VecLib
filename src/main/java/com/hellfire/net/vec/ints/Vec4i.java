@@ -1,7 +1,6 @@
 package com.hellfire.net.vec.ints;
 
 import com.hellfire.net.vec.IVec;
-import com.hellfire.net.vec.doubles.Vec2d;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Range;
 
@@ -13,7 +12,7 @@ public class Vec4i implements IVec<Integer, Vec4i> {
 
     public final int x, y, z, w;
 
-    public Vec4i(final int[] comps) {
+    public Vec4i(final int @NotNull ... comps) {
         if (comps.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");
         this.x = comps[0];
         this.y = comps[1];
@@ -53,7 +52,7 @@ public class Vec4i implements IVec<Integer, Vec4i> {
     }
 
     @Override
-    public @NotNull Vec4i set(@NotNull Integer[] valArr) {
+    public @NotNull Vec4i set(@NotNull Integer @NotNull ... valArr) {
         if (valArr.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");
         return new Vec4i(valArr[0], valArr[1], valArr[2], valArr[3]);
     }
@@ -80,7 +79,7 @@ public class Vec4i implements IVec<Integer, Vec4i> {
     }
 
     @Override
-    public @NotNull Vec4i add(@NotNull Integer[] vecArr) {
+    public @NotNull Vec4i add(@NotNull Integer @NotNull ... vecArr) {
         if (vecArr.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");
         return new Vec4i(x + vecArr[0], y + vecArr[1], z + vecArr[2], w + vecArr[3]);
     }
@@ -91,7 +90,7 @@ public class Vec4i implements IVec<Integer, Vec4i> {
     }
 
     @Override
-    public @NotNull Vec4i sub(@NotNull Integer[] vecArr) {
+    public @NotNull Vec4i sub(@NotNull Integer @NotNull ... vecArr) {
         if (vecArr.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");
         return new Vec4i(x - vecArr[0], y - vecArr[1], z - vecArr[2], w - vecArr[3]);
     }
@@ -102,7 +101,7 @@ public class Vec4i implements IVec<Integer, Vec4i> {
     }
 
     @Override
-    public @NotNull Vec4i mul(@NotNull Integer[] vecArr) {
+    public @NotNull Vec4i mul(@NotNull Integer @NotNull ... vecArr) {
         if (vecArr.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");
         return new Vec4i(x * vecArr[0], y * vecArr[1], z * vecArr[2], w * vecArr[3]);
     }
