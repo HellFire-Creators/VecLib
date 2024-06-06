@@ -103,4 +103,20 @@ class IVecTest {
         assert vec3d.hashCode() != new Vec3d(rand.nextDouble() + rand.nextInt(), rand.nextDouble() + rand.nextInt(), rand.nextDouble() + rand.nextInt()).hashCode();
         assert vec4d.hashCode() != new Vec4d(rand.nextDouble() + rand.nextInt(), rand.nextDouble() + rand.nextInt(), rand.nextDouble() + rand.nextInt(), rand.nextDouble() + rand.nextInt()).hashCode();
     }
+
+    @Test
+    void testNormalize() {
+        assert vec2i.normalize().length() == 1;
+        assert vec2l.normalize().length() == 1;
+        assert vec2f.normalize().length() == 1;
+        assert vec2d.normalize().length() == 1;
+        assert vec3i.normalize().length() == 1;
+        assert vec3l.normalize().length() == 1;
+        assert vec3f.normalize().length() == 1;
+        assert vec3d.normalize().length() == 1;
+        assert vec4i.normalize().length() == 1;
+        assert vec4l.normalize().length() == 1;
+        assert vec4f.normalize().length() == 1;
+        assert vec4d.normalize().length() == 1;
+    }
 }

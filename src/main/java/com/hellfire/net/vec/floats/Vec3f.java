@@ -1,11 +1,11 @@
 package com.hellfire.net.vec.floats;
 
-import com.hellfire.net.vec.IVec;
+import com.hellfire.net.vec.IVec3;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Range;
 
 /* Created by Conor on 15.05.2024 */
-public class Vec3f extends IVec<Float, Vec3f> {
+public class Vec3f extends IVec3<Float, Vec3f> {
 
     private static final int NUM_COMPONENTS = 3;
     public static final Vec3f ZERO = new Vec3f(0, 0, 0);
@@ -191,5 +191,14 @@ public class Vec3f extends IVec<Float, Vec3f> {
     @Override
     public @NotNull Vec3f clone() {
         return new Vec3f(x, y, z);
+    }
+
+    @Override
+    public @NotNull Vec3f cross(@NotNull Vec3f other) {
+        return new Vec3f(
+                y*other.z - other.y*z,
+                z*other.x - other.z*x,
+                x*other.y - other.x*y
+        );
     }
 }

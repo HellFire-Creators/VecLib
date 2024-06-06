@@ -83,6 +83,11 @@ public abstract class IVec<N extends Number & Comparable<N>, T extends IVec<N, ?
     public abstract T abs();
 
     @NotNull
+    public T normalize() {
+        return div(length());
+    }
+
+    @NotNull
     public abstract T zero();
 
     @Override

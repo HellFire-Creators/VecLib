@@ -1,11 +1,11 @@
 package com.hellfire.net.vec.doubles;
 
-import com.hellfire.net.vec.IVec;
+import com.hellfire.net.vec.IVec3;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Range;
 
 /* Created by Conor on 15.05.2024 */
-public class Vec3d extends IVec<Double, Vec3d> {
+public class Vec3d extends IVec3<Double, Vec3d> {
 
     private static final int NUM_COMPONENTS = 3;
     public static final Vec3d ZERO = new Vec3d(0, 0, 0);
@@ -191,5 +191,14 @@ public class Vec3d extends IVec<Double, Vec3d> {
     @Override
     public @NotNull Vec3d clone() {
         return new Vec3d(x, y, z);
+    }
+
+    @Override
+    public @NotNull Vec3d cross(@NotNull Vec3d other) {
+        return new Vec3d(
+                y*other.z - other.y*z,
+                z*other.x - other.z*x,
+                x*other.y - other.x*y
+        );
     }
 }
