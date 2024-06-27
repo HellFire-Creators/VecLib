@@ -30,6 +30,9 @@ public abstract class IVec<N extends Number & Comparable<N>, T extends IVec<N, ?
     public abstract T add(final @NotNull N @NotNull ... vecArr);
 
     @NotNull
+    public abstract T addScalar(final @NotNull N val);
+
+    @NotNull
     public abstract T sub(final @NotNull T vec);
 
     @NotNull

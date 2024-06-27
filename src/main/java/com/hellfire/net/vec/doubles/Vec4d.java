@@ -85,6 +85,11 @@ public class Vec4d extends IVec<Double, Vec4d> {
     }
 
     @Override
+    public @NotNull Vec4d addScalar(@NotNull Double val) {
+        return new Vec4d(x + val, y + val, z + val, w + val);
+    }
+
+    @Override
     public @NotNull Vec4d sub(@NotNull Vec4d vec) {
         return new Vec4d(x - vec.x, y - vec.y, z - vec.z, w - vec.w);
     }

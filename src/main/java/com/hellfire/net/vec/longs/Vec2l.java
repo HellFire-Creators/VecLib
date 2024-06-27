@@ -77,6 +77,11 @@ public class Vec2l extends IVec<Long, Vec2l> {
     }
 
     @Override
+    public @NotNull Vec2l addScalar(@NotNull Long val) {
+        return new Vec2l(x + val, y + val);
+    }
+
+    @Override
     public @NotNull Vec2l sub(@NotNull Vec2l vec) {
         return new Vec2l(x - vec.x, y - vec.y);
     }

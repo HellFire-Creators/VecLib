@@ -85,6 +85,11 @@ public class Vec4f extends IVec<Float, Vec4f> {
     }
 
     @Override
+    public @NotNull Vec4f addScalar(@NotNull Float val) {
+        return new Vec4f(x + val, y + val, z + val, w + val);
+    }
+
+    @Override
     public @NotNull Vec4f sub(@NotNull Vec4f vec) {
         return new Vec4f(x - vec.x, y - vec.y, z - vec.z, w - vec.w);
     }

@@ -81,6 +81,11 @@ public class Vec3i extends IVec3<Integer, Vec3i> {
     }
 
     @Override
+    public @NotNull Vec3i addScalar(@NotNull Integer val) {
+        return new Vec3i(x + val, y + val, z + val);
+    }
+
+    @Override
     public @NotNull Vec3i sub(@NotNull Vec3i vec) {
         return new Vec3i(x - vec.x, y - vec.y, z - vec.z);
     }

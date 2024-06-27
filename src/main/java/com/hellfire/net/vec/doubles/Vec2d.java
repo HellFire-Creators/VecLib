@@ -77,6 +77,11 @@ public class Vec2d extends IVec<Double, Vec2d> {
     }
 
     @Override
+    public @NotNull Vec2d addScalar(@NotNull Double val) {
+        return new Vec2d(x + val, y + val);
+    }
+
+    @Override
     public @NotNull Vec2d sub(@NotNull Vec2d vec) {
         return new Vec2d(x - vec.x, y - vec.y);
     }

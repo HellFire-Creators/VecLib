@@ -81,6 +81,11 @@ public class Vec3l extends IVec3<Long, Vec3l> {
     }
 
     @Override
+    public @NotNull Vec3l addScalar(@NotNull Long val) {
+        return new Vec3l(x + val, y + val, z + val);
+    }
+
+    @Override
     public @NotNull Vec3l sub(@NotNull Vec3l vec) {
         return new Vec3l(x - vec.x, y - vec.y, z - vec.z);
     }

@@ -77,6 +77,11 @@ public class Vec2f extends IVec<Float, Vec2f> {
     }
 
     @Override
+    public @NotNull Vec2f addScalar(@NotNull Float val) {
+        return new Vec2f(x + val, y + val);
+    }
+
+    @Override
     public @NotNull Vec2f sub(@NotNull Vec2f vec) {
         return new Vec2f(x - vec.x, y - vec.y);
     }

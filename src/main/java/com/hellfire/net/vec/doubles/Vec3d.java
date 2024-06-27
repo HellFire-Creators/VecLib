@@ -81,6 +81,11 @@ public class Vec3d extends IVec3<Double, Vec3d> {
     }
 
     @Override
+    public @NotNull Vec3d addScalar(@NotNull Double val) {
+        return new Vec3d(x + val, y + val, z + val);
+    }
+
+    @Override
     public @NotNull Vec3d sub(@NotNull Vec3d vec) {
         return new Vec3d(x - vec.x, y - vec.y, z - vec.z);
     }

@@ -81,6 +81,11 @@ public class Vec3f extends IVec3<Float, Vec3f> {
     }
 
     @Override
+    public @NotNull Vec3f addScalar(@NotNull Float val) {
+        return new Vec3f(x + val, y + val, z + val);
+    }
+
+    @Override
     public @NotNull Vec3f sub(@NotNull Vec3f vec) {
         return new Vec3f(x - vec.x, y - vec.y, z - vec.z);
     }
