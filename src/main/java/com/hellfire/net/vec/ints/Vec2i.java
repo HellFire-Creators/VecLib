@@ -8,7 +8,7 @@ import org.jetbrains.annotations.Range;
 public class Vec2i extends IVec<Integer, Vec2i> {
 
 
-    private static final int NUM_COMPONENTS = 2;
+    public static final int NUM_COMPONENTS = 2;
     public static final Vec2i ZERO = new Vec2i(0, 0);
 
     public final int x, y;

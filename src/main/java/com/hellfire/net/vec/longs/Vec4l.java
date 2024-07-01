@@ -7,7 +7,7 @@ import org.jetbrains.annotations.Range;
 /* Created by Conor on 15.05.2024 */
 public class Vec4l extends IVec<Long, Vec4l> {
 
-    private static final int NUM_COMPONENTS = 4;
+    public static final int NUM_COMPONENTS = 4;
     public static final Vec4l ZERO = new Vec4l(0, 0, 0, 0);
 
     public final long x, y, z, w;

@@ -7,7 +7,7 @@ import org.jetbrains.annotations.Range;
 /* Created by Conor on 15.05.2024 */
 public class Vec2d extends IVec<Double, Vec2d> {
 
-    private static final int NUM_COMPONENTS = 2;
+    public static final int NUM_COMPONENTS = 2;
     public static final Vec2d ZERO = new Vec2d(0, 0);
 
     public final double x, y;

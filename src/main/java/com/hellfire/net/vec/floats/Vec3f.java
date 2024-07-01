@@ -7,7 +7,7 @@ import org.jetbrains.annotations.Range;
 /* Created by Conor on 15.05.2024 */
 public class Vec3f extends IVec3<Float, Vec3f> {
 
-    private static final int NUM_COMPONENTS = 3;
+    public static final int NUM_COMPONENTS = 3;
     public static final Vec3f ZERO = new Vec3f(0, 0, 0);
 
     public final float x, y, z;
