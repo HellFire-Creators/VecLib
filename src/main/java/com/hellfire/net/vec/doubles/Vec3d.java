@@ -108,7 +108,7 @@ public class Vec3d extends IVec3<Double, Vec3d> {
     }
 
     @Override
-    public @NotNull Vec3d mul(@NotNull Double scale) {
+    public @NotNull Vec3d mulScalar(@NotNull Double scale) {
         return new Vec3d(x * scale, y * scale, z * scale);
     }
 

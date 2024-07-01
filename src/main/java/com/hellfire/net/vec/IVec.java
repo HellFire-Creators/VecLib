@@ -45,7 +45,7 @@ public abstract class IVec<N extends Number & Comparable<N>, T extends IVec<N, ?
     public abstract T mul(final @NotNull N @NotNull ... vecArr);
 
     @NotNull
-    public abstract T mul(final @NotNull N scale);
+    public abstract T mulScalar(final @NotNull N scale);
 
     @NotNull
     public abstract T div(final @NotNull N scale);

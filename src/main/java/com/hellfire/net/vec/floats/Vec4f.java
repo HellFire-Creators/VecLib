@@ -112,7 +112,7 @@ public class Vec4f extends IVec<Float, Vec4f> {
     }
 
     @Override
-    public @NotNull Vec4f mul(@NotNull Float scale) {
+    public @NotNull Vec4f mulScalar(@NotNull Float scale) {
         return new Vec4f(x * scale, y * scale, z * scale, w * scale);
     }
 

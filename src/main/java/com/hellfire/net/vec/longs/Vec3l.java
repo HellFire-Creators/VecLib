@@ -108,7 +108,7 @@ public class Vec3l extends IVec3<Long, Vec3l> {
     }
 
     @Override
-    public @NotNull Vec3l mul(@NotNull Long scale) {
+    public @NotNull Vec3l mulScalar(@NotNull Long scale) {
         return new Vec3l(x * scale, y * scale, z * scale);
     }
 

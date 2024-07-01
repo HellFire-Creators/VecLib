@@ -104,7 +104,7 @@ public class Vec2d extends IVec<Double, Vec2d> {
     }
 
     @Override
-    public @NotNull Vec2d mul(@NotNull Double scale) {
+    public @NotNull Vec2d mulScalar(@NotNull Double scale) {
         return new Vec2d(x * scale, y * scale);
     }
 

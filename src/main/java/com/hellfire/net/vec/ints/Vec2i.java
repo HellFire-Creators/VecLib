@@ -105,7 +105,7 @@ public class Vec2i extends IVec<Integer, Vec2i> {
     }
 
     @Override
-    public @NotNull Vec2i mul(@NotNull Integer scale) {
+    public @NotNull Vec2i mulScalar(@NotNull Integer scale) {
         return new Vec2i(x * scale, y * scale);
     }
 

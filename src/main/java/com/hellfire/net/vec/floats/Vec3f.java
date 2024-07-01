@@ -108,7 +108,7 @@ public class Vec3f extends IVec3<Float, Vec3f> {
     }
 
     @Override
-    public @NotNull Vec3f mul(@NotNull Float scale) {
+    public @NotNull Vec3f mulScalar(@NotNull Float scale) {
         return new Vec3f(x * scale, y * scale, z * scale);
     }
 
