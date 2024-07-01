@@ -7,7 +7,6 @@ import org.jetbrains.annotations.Range;
 /* Created by Conor on 15.05.2024 */
 public class Vec3l extends IVec3<Long, Vec3l> {
 
-    public static final int NUM_COMPONENTS = 3;
     public static final Vec3l ZERO = new Vec3l(0, 0, 0);
 
     public final long x, y, z;
@@ -32,11 +31,6 @@ public class Vec3l extends IVec3<Long, Vec3l> {
     ///////////////////////////////////////////////////////////////////////////
     // Impl methods
     ///////////////////////////////////////////////////////////////////////////
-
-    @Override
-    public int numComponents() {
-        return NUM_COMPONENTS;
-    }
 
     @Override
     public @NotNull Vec3l set(@Range(from = 0, to = 2) int component, @NotNull Long val) {

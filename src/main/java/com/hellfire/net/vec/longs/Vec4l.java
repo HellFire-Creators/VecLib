@@ -1,13 +1,12 @@
 package com.hellfire.net.vec.longs;
 
-import com.hellfire.net.vec.IVec;
+import com.hellfire.net.vec.IVec4;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Range;
 
 /* Created by Conor on 15.05.2024 */
-public class Vec4l extends IVec<Long, Vec4l> {
+public class Vec4l extends IVec4<Long, Vec4l> {
 
-    public static final int NUM_COMPONENTS = 4;
     public static final Vec4l ZERO = new Vec4l(0, 0, 0, 0);
 
     public final long x, y, z, w;
@@ -34,11 +33,6 @@ public class Vec4l extends IVec<Long, Vec4l> {
     ///////////////////////////////////////////////////////////////////////////
     // Impl methods
     ///////////////////////////////////////////////////////////////////////////
-
-    @Override
-    public int numComponents() {
-        return NUM_COMPONENTS;
-    }
 
     @Override
     public @NotNull Vec4l set(@Range(from = 0, to = 3) int component, @NotNull Long val) {

@@ -1,11 +1,12 @@
 package com.hellfire.net.vec;
 
-import net.minestom.server.coordinate.Vec;
 import org.jetbrains.annotations.NotNull;
 
-public abstract class IVec3<N extends Number & Comparable<N>, T extends IVec<N, ?>> extends IVec<N, T> {
+/* Created by Conor on 01.07.2024 */
+public abstract class IVec4<N extends Number & Comparable<N>, T extends IVec<N, ?>> extends IVec<N, T> {
 
-    public static final int NUM_COMPONENTS = 3;
+
+    public static final int NUM_COMPONENTS = 4;
 
     public T setX(final @NotNull N newX) {
         return set(0, newX);
@@ -17,6 +18,10 @@ public abstract class IVec3<N extends Number & Comparable<N>, T extends IVec<N, 
 
     public T setZ(final @NotNull N newZ) {
         return set(2, newZ);
+    }
+
+    public T setW(final @NotNull N newW) {
+        return set(3, newW);
     }
 
     @Override
@@ -36,10 +41,8 @@ public abstract class IVec3<N extends Number & Comparable<N>, T extends IVec<N, 
         return get(2);
     }
 
-    @NotNull
-    public abstract T cross(@NotNull T other);
-
-    public Vec asVec() {
-        return new Vec(get(0).doubleValue(), get(1).doubleValue(), get(2).doubleValue());
+    public N getW() {
+        return get(3);
     }
+
 }

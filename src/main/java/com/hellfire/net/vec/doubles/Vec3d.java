@@ -7,7 +7,6 @@ import org.jetbrains.annotations.Range;
 /* Created by Conor on 15.05.2024 */
 public class Vec3d extends IVec3<Double, Vec3d> {
 
-    public static final int NUM_COMPONENTS = 3;
     public static final Vec3d ZERO = new Vec3d(0, 0, 0);
 
     public final double x, y, z;
@@ -32,11 +31,6 @@ public class Vec3d extends IVec3<Double, Vec3d> {
     /////////////////////////////////////////////////////////////////////////
     // Impl methods
     ///////////////////////////////////////////////////////////////////////////
-
-    @Override
-    public int numComponents() {
-        return NUM_COMPONENTS;
-    }
 
     @Override
     public @NotNull Vec3d set(@Range(from = 0, to = 2) int component, @NotNull Double val) {

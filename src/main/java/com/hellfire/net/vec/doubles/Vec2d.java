@@ -1,13 +1,12 @@
 package com.hellfire.net.vec.doubles;
 
-import com.hellfire.net.vec.IVec;
+import com.hellfire.net.vec.IVec2;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Range;
 
 /* Created by Conor on 15.05.2024 */
-public class Vec2d extends IVec<Double, Vec2d> {
+public class Vec2d extends IVec2<Double, Vec2d> {
 
-    public static final int NUM_COMPONENTS = 2;
     public static final Vec2d ZERO = new Vec2d(0, 0);
 
     public final double x, y;
@@ -30,11 +29,6 @@ public class Vec2d extends IVec<Double, Vec2d> {
     ///////////////////////////////////////////////////////////////////////////
     // Impl methods
     ///////////////////////////////////////////////////////////////////////////
-
-    @Override
-    public int numComponents() {
-        return NUM_COMPONENTS;
-    }
 
     @Override
     public @NotNull Vec2d set(@Range(from = 0, to = 1) int component, @NotNull Double val) {

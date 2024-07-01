@@ -1,13 +1,12 @@
 package com.hellfire.net.vec.floats;
 
-import com.hellfire.net.vec.IVec;
+import com.hellfire.net.vec.IVec2;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Range;
 
 /* Created by Conor on 15.05.2024 */
-public class Vec2f extends IVec<Float, Vec2f> {
+public class Vec2f extends IVec2<Float, Vec2f> {
 
-    public static final int NUM_COMPONENTS = 2;
     public static final Vec2f ZERO = new Vec2f(0, 0);
 
     public final float x, y;
@@ -30,11 +29,6 @@ public class Vec2f extends IVec<Float, Vec2f> {
     ///////////////////////////////////////////////////////////////////////////
     // Impl methods
     ///////////////////////////////////////////////////////////////////////////
-
-    @Override
-    public int numComponents() {
-        return NUM_COMPONENTS;
-    }
 
     @Override
     public @NotNull Vec2f set(@Range(from = 0, to = 1) int component, @NotNull Float val) {
