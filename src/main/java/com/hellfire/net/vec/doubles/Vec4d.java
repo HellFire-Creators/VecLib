@@ -1,5 +1,6 @@
 package com.hellfire.net.vec.doubles;
 
+import com.hellfire.net.vec.IVec;
 import com.hellfire.net.vec.IVec4;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Range;
@@ -186,6 +187,11 @@ public class Vec4d extends IVec4<Double, Vec4d> {
     @Override
     public @NotNull Vec4d abs() {
         return new Vec4d(Math.abs(x), Math.abs(y), Math.abs(z), Math.abs(w));
+    }
+
+    @Override
+    public @NotNull Vec4d normalize() {
+        return div(length());
     }
 
     @Override

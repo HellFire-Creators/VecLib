@@ -1,6 +1,7 @@
 package com.hellfire.net.vec.longs;
 
 import com.hellfire.net.vec.IVec2;
+import com.hellfire.net.vec.doubles.Vec2d;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Range;
 
@@ -174,6 +175,11 @@ public class Vec2l extends IVec2<Long, Vec2l> {
     @Override
     public @NotNull Vec2l abs() {
         return new Vec2l(Math.abs(x), Math.abs(y));
+    }
+
+    @Override
+    public @NotNull Vec2d normalize() {
+        return new Vec2d(x, y).div(length());
     }
 
     @Override

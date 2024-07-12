@@ -1,6 +1,8 @@
 package com.hellfire.net.vec.floats;
 
+import com.hellfire.net.vec.IVec;
 import com.hellfire.net.vec.IVec2;
+import com.hellfire.net.vec.doubles.Vec2d;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Range;
 
@@ -174,6 +176,11 @@ public class Vec2f extends IVec2<Float, Vec2f> {
     @Override
     public @NotNull Vec2f abs() {
         return new Vec2f(Math.abs(x), Math.abs(y));
+    }
+
+    @Override
+    public @NotNull Vec2d normalize() {
+        return new Vec2d(x, y).div(length());
     }
 
     @Override

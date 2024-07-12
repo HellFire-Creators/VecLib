@@ -1,5 +1,6 @@
 package com.hellfire.net.vec.doubles;
 
+import com.hellfire.net.vec.IVec;
 import com.hellfire.net.vec.IVec3;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Range;
@@ -180,6 +181,11 @@ public class Vec3d extends IVec3<Double, Vec3d> {
     @Override
     public @NotNull Vec3d abs() {
         return new Vec3d(Math.abs(x), Math.abs(y), Math.abs(z));
+    }
+
+    @Override
+    public @NotNull Vec3d normalize() {
+        return div(length());
     }
 
     @Override

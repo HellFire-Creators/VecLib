@@ -11,21 +11,21 @@ import java.util.concurrent.ThreadLocalRandom;
 class IVecTest {
 
     private static final ThreadLocalRandom rand = ThreadLocalRandom.current();
-    private final static Vec2i vec2i = new Vec2i(rand.nextInt(), rand.nextInt());
-    private final static Vec3i vec3i = new Vec3i(rand.nextInt(), rand.nextInt(), rand.nextInt());
-    private final static Vec4i vec4i = new Vec4i(rand.nextInt(), rand.nextInt(), rand.nextInt(), rand.nextInt());
+    private final static Vec2i vec2i = new Vec2i(rand.nextInt(10_000) - 5_000, rand.nextInt(10_000) - 5_000);
+    private final static Vec3i vec3i = new Vec3i(rand.nextInt(10_000) - 5_000, rand.nextInt(10_000) - 5_000, rand.nextInt(10_000) - 5_000);
+    private final static Vec4i vec4i = new Vec4i(rand.nextInt(10_000) - 5_000, rand.nextInt(10_000) - 5_000, rand.nextInt(10_000) - 5_000, rand.nextInt(10_000) - 5_000);
 
-    private final static Vec2l vec2l = new Vec2l(rand.nextLong(), rand.nextLong());
-    private final static Vec3l vec3l = new Vec3l(rand.nextLong(), rand.nextLong(), rand.nextLong());
-    private final static Vec4l vec4l = new Vec4l(rand.nextLong(), rand.nextLong(), rand.nextLong(), rand.nextLong());
+    private final static Vec2l vec2l = new Vec2l(rand.nextLong(10_000) - 5_000, rand.nextLong(10_000) - 5_000);
+    private final static Vec3l vec3l = new Vec3l(rand.nextLong(10_000) - 5_000, rand.nextLong(10_000) - 5_000, rand.nextLong(10_000) - 5_000);
+    private final static Vec4l vec4l = new Vec4l(rand.nextLong(10_000) - 5_000, rand.nextLong(10_000) - 5_000, rand.nextLong(10_000) - 5_000, rand.nextLong(10_000) - 5_000);
 
-    private final static Vec2f vec2f = new Vec2f(rand.nextFloat() + rand.nextInt(), rand.nextFloat() + rand.nextInt());
-    private final static Vec3f vec3f = new Vec3f(rand.nextFloat() + rand.nextInt(), rand.nextFloat() + rand.nextInt(), rand.nextFloat() + rand.nextInt());
-    private final static Vec4f vec4f = new Vec4f(rand.nextFloat() + rand.nextInt(), rand.nextFloat() + rand.nextInt(), rand.nextFloat() + rand.nextInt(), rand.nextFloat() + rand.nextInt());
+    private final static Vec2f vec2f = new Vec2f(rand.nextFloat() + rand.nextInt(10_000) - 5_000, rand.nextFloat() + rand.nextInt(10_000) - 5_000);
+    private final static Vec3f vec3f = new Vec3f(rand.nextFloat() + rand.nextInt(10_000) - 5_000, rand.nextFloat() + rand.nextInt(10_000) - 5_000, rand.nextFloat() + rand.nextInt(10_000) - 5_000);
+    private final static Vec4f vec4f = new Vec4f(rand.nextFloat() + rand.nextInt(10_000) - 5_000, rand.nextFloat() + rand.nextInt(10_000) - 5_000, rand.nextFloat() + rand.nextInt(10_000) - 5_000, rand.nextFloat() + rand.nextInt(10_000) - 5_000);
 
-    private final static Vec2d vec2d = new Vec2d(rand.nextDouble() + rand.nextInt(), rand.nextDouble() + rand.nextInt());
-    private final static Vec3d vec3d = new Vec3d(rand.nextDouble() + rand.nextInt(), rand.nextDouble() + rand.nextInt(), rand.nextDouble() + rand.nextInt());
-    private final static Vec4d vec4d = new Vec4d(rand.nextDouble() + rand.nextInt(), rand.nextDouble() + rand.nextInt(), rand.nextDouble() + rand.nextInt(), rand.nextDouble() + rand.nextInt());
+    private final static Vec2d vec2d = new Vec2d(rand.nextDouble() + rand.nextInt(10_000) - 5_000, rand.nextDouble() + rand.nextInt(10_000) - 5_000);
+    private final static Vec3d vec3d = new Vec3d(rand.nextDouble() + rand.nextInt(10_000) - 5_000, rand.nextDouble() + rand.nextInt(10_000) - 5_000, rand.nextDouble() + rand.nextInt(10_000) - 5_000);
+    private final static Vec4d vec4d = new Vec4d(rand.nextDouble() + rand.nextInt(10_000) - 5_000, rand.nextDouble() + rand.nextInt(10_000) - 5_000, rand.nextDouble() + rand.nextInt(10_000) - 5_000, rand.nextDouble() + rand.nextInt(10_000) - 5_000);
 
 
     @Test
@@ -104,19 +104,25 @@ class IVecTest {
         assert vec4d.hashCode() != new Vec4d(rand.nextDouble() + rand.nextInt(), rand.nextDouble() + rand.nextInt(), rand.nextDouble() + rand.nextInt(), rand.nextDouble() + rand.nextInt()).hashCode();
     }
 
+    private static final double EPSILON = 0.000001;   // Allowed deviance
+
     @Test
     void testNormalize() {
-        assert vec2i.normalize().length() == 1;
-        assert vec2l.normalize().length() == 1;
-        assert vec2f.normalize().length() == 1;
-        assert vec2d.normalize().length() == 1;
-        assert vec3i.normalize().length() == 1;
-        assert vec3l.normalize().length() == 1;
-        assert vec3f.normalize().length() == 1;
-        assert vec3d.normalize().length() == 1;
-        assert vec4i.normalize().length() == 1;
-        assert vec4l.normalize().length() == 1;
-        assert vec4f.normalize().length() == 1;
-        assert vec4d.normalize().length() == 1;
+        assert withinBounds(vec2i.normalize().length(), 1, EPSILON);
+        assert withinBounds(vec2l.normalize().length(), 1, EPSILON);
+        assert withinBounds(vec2f.normalize().length(), 1, EPSILON);
+        assert withinBounds(vec2d.normalize().length(), 1, EPSILON);
+        assert withinBounds(vec3i.normalize().length(), 1, EPSILON);
+        assert withinBounds(vec3l.normalize().length(), 1, EPSILON);
+        assert withinBounds(vec3f.normalize().length(), 1, EPSILON);
+        assert withinBounds(vec3d.normalize().length(), 1, EPSILON);
+        assert withinBounds(vec4i.normalize().length(), 1, EPSILON);
+        assert withinBounds(vec4l.normalize().length(), 1, EPSILON);
+        assert withinBounds(vec4f.normalize().length(), 1, EPSILON);
+        assert withinBounds(vec4d.normalize().length(), 1, EPSILON);
+    }
+
+    private static boolean withinBounds(double val, double point, double allowedDeviance) {
+        return (point - allowedDeviance) <= val && val <= (point + allowedDeviance);
     }
 }

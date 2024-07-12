@@ -177,6 +177,11 @@ public class Vec2d extends IVec2<Double, Vec2d> {
     }
 
     @Override
+    public @NotNull Vec2d normalize() {
+        return div(length());
+    }
+
+    @Override
     public @NotNull Vec2d zero() {
         return ZERO;
     }

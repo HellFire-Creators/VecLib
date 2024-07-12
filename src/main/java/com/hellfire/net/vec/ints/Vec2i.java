@@ -1,6 +1,8 @@
 package com.hellfire.net.vec.ints;
 
+import com.hellfire.net.vec.IVec;
 import com.hellfire.net.vec.IVec2;
+import com.hellfire.net.vec.doubles.Vec2d;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Range;
 
@@ -175,6 +177,11 @@ public class Vec2i extends IVec2<Integer, Vec2i> {
     @Override
     public @NotNull Vec2i abs() {
         return new Vec2i(Math.abs(x), Math.abs(y));
+    }
+
+    @Override
+    public @NotNull Vec2d normalize() {
+        return new Vec2d(x, y).div(length());
     }
 
     @Override
