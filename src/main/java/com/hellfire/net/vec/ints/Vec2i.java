@@ -1,6 +1,5 @@
 package com.hellfire.net.vec.ints;
 
-import com.hellfire.net.vec.IVec;
 import com.hellfire.net.vec.IVec2;
 import com.hellfire.net.vec.doubles.Vec2d;
 import org.jetbrains.annotations.NotNull;
@@ -90,6 +89,11 @@ public class Vec2i extends IVec2<Integer, Vec2i> {
     }
 
     @Override
+    public @NotNull Vec2i subScalar(@NotNull Integer val) {
+        return new Vec2i(x - val, y - val);
+    }
+
+    @Override
     public @NotNull Vec2i mul(@NotNull Vec2i vec) {
         return new Vec2i(x * vec.x, y * vec.y);
     }
@@ -106,12 +110,18 @@ public class Vec2i extends IVec2<Integer, Vec2i> {
     }
 
     @Override
-    public @NotNull Vec2i div(@NotNull Integer scale) {
-        return new Vec2i(x / scale, y / scale);
+    public @NotNull Vec2i div(@NotNull Vec2i vec) {
+        return new Vec2i(x / vec.x, y / vec.y);
     }
 
     @Override
-    public @NotNull Vec2i div(double scale) {
+    public @NotNull Vec2i div(@NotNull Integer @NotNull ... vecArr) {
+        if (vecArr.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");
+        return new Vec2i(x / vecArr[0], y / vecArr[1]);
+    }
+
+    @Override
+    public @NotNull Vec2i divScalar(double scale) {
         return new Vec2i((int) (x / scale), (int) (y / scale));
     }
 
@@ -181,7 +191,7 @@ public class Vec2i extends IVec2<Integer, Vec2i> {
 
     @Override
     public @NotNull Vec2d normalize() {
-        return new Vec2d(x, y).div(length());
+        return new Vec2d(x, y).divScalar(length());
     }
 
     @Override

@@ -1,6 +1,5 @@
 package com.hellfire.net.vec.doubles;
 
-import com.hellfire.net.vec.IVec;
 import com.hellfire.net.vec.IVec3;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Range;
@@ -92,6 +91,11 @@ public class Vec3d extends IVec3<Double, Vec3d> {
     }
 
     @Override
+    public @NotNull Vec3d subScalar(@NotNull Double val) {
+        return new Vec3d(x - val, y - val, z - val);
+    }
+
+    @Override
     public @NotNull Vec3d mul(@NotNull Vec3d vec) {
         return new Vec3d(x * vec.x, y * vec.y, z * vec.z);
     }
@@ -108,13 +112,19 @@ public class Vec3d extends IVec3<Double, Vec3d> {
     }
 
     @Override
-    public @NotNull Vec3d div(@NotNull Double scale) {
-        return new Vec3d(x / scale, y / scale, z / scale);
+    public @NotNull Vec3d div(@NotNull Vec3d vec) {
+        return new Vec3d(x / vec.x, y / vec.y, z / vec.z);
     }
 
     @Override
-    public @NotNull Vec3d div(double scale) {
-        return new Vec3d((double) (x / scale), (double) (y / scale), (double) (z / scale));
+    public @NotNull Vec3d div(@NotNull Double @NotNull ... vecArr) {
+        if (vecArr.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");
+        return new Vec3d(x / vecArr[0], y / vecArr[1], z / vecArr[2]);
+    }
+
+    @Override
+    public @NotNull Vec3d divScalar(double scale) {
+        return new Vec3d(x / scale, y / scale, z / scale);
     }
 
     @Override
@@ -185,7 +195,7 @@ public class Vec3d extends IVec3<Double, Vec3d> {
 
     @Override
     public @NotNull Vec3d normalize() {
-        return div(length());
+        return divScalar(length());
     }
 
     @Override

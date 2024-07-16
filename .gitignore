@@ -8,6 +8,8 @@ target/
 .idea/jarRepositories.xml
 .idea/compiler.xml
 .idea/libraries/
+.idea/material_theme_project_new.xml
+.idea/uiDesigner.xml
 *.iws
 *.iml
 *.ipr

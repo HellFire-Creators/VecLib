@@ -88,6 +88,11 @@ public class Vec2l extends IVec2<Long, Vec2l> {
     }
 
     @Override
+    public @NotNull Vec2l subScalar(@NotNull Long val) {
+        return new Vec2l(x - val, y - val);
+    }
+
+    @Override
     public @NotNull Vec2l mul(@NotNull Vec2l vec) {
         return new Vec2l(x * vec.x, y * vec.y);
     }
@@ -104,12 +109,18 @@ public class Vec2l extends IVec2<Long, Vec2l> {
     }
 
     @Override
-    public @NotNull Vec2l div(@NotNull Long scale) {
-        return new Vec2l(x / scale, y / scale);
+    public @NotNull Vec2l div(@NotNull Vec2l vec) {
+        return new Vec2l(x / vec.x, y / vec.y);
     }
 
     @Override
-    public @NotNull Vec2l div(double scale) {
+    public @NotNull Vec2l div(@NotNull Long @NotNull ... vecArr) {
+        if (vecArr.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");
+        return new Vec2l(x / vecArr[0], y / vecArr[1]);
+    }
+
+    @Override
+    public @NotNull Vec2l divScalar(double scale) {
         return new Vec2l((long) (x / scale), (long) (y / scale));
     }
 
@@ -179,7 +190,7 @@ public class Vec2l extends IVec2<Long, Vec2l> {
 
     @Override
     public @NotNull Vec2d normalize() {
-        return new Vec2d(x, y).div(length());
+        return new Vec2d(x, y).divScalar(length());
     }
 
     @Override

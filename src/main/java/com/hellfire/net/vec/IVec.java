@@ -39,6 +39,9 @@ public abstract class IVec<N extends Number & Comparable<N>, T extends IVec<N, ?
     public abstract T sub(final @NotNull N @NotNull ... vecArr);
 
     @NotNull
+    public abstract T subScalar(final @NotNull N val);
+
+    @NotNull
     public abstract T mul(final @NotNull T vec);
 
     @NotNull
@@ -48,10 +51,13 @@ public abstract class IVec<N extends Number & Comparable<N>, T extends IVec<N, ?
     public abstract T mulScalar(final @NotNull N scale);
 
     @NotNull
-    public abstract T div(final @NotNull N scale);
+    public abstract T div(final @NotNull T vec);
 
     @NotNull
-    public abstract T div(final double scale);
+    public abstract T div(final @NotNull N @NotNull ... vecArr);
+
+    @NotNull
+    public abstract T divScalar(double scale);
 
     public abstract double length();
 
@@ -99,7 +105,7 @@ public abstract class IVec<N extends Number & Comparable<N>, T extends IVec<N, ?
 
         sb.append(className).append("{");
         for (int i = 0; i < numComponents(); i++) {
-            sb.append(FIELD_NAMES[i]).append("=").append(components[i]);
+            sb.append(FIELD_NAMES[i]).append("=").append(String.format("%.2f", components[i].doubleValue()));
             if (i < numComponents() - 1) sb.append(", ");
         }
 

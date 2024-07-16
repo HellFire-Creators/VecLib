@@ -1,6 +1,5 @@
 package com.hellfire.net.vec.longs;
 
-import com.hellfire.net.vec.IVec;
 import com.hellfire.net.vec.IVec4;
 import com.hellfire.net.vec.doubles.Vec4d;
 import org.jetbrains.annotations.NotNull;
@@ -97,6 +96,11 @@ public class Vec4l extends IVec4<Long, Vec4l> {
     }
 
     @Override
+    public @NotNull Vec4l subScalar(@NotNull Long val) {
+        return new Vec4l(x - val, y - val, z - val, w - val);
+    }
+
+    @Override
     public @NotNull Vec4l mul(@NotNull Vec4l vec) {
         return new Vec4l(x * vec.x, y * vec.y, z * vec.z, w * vec.w);
     }
@@ -113,12 +117,18 @@ public class Vec4l extends IVec4<Long, Vec4l> {
     }
 
     @Override
-    public @NotNull Vec4l div(@NotNull Long scale) {
-        return new Vec4l(x / scale, y / scale, z / scale, w / scale);
+    public @NotNull Vec4l div(@NotNull Vec4l vec) {
+        return new Vec4l(x / vec.x, y / vec.y, z / vec.z, w / vec.w);
     }
 
     @Override
-    public @NotNull Vec4l div(double scale) {
+    public @NotNull Vec4l div(@NotNull Long @NotNull ... vecArr) {
+        if (vecArr.length != NUM_COMPONENTS) throw new IllegalArgumentException("Invalid number of components");
+        return new Vec4l(x / vecArr[0], y / vecArr[1], z / vecArr[2], w / vecArr[3]);
+    }
+
+    @Override
+    public @NotNull Vec4l divScalar(double scale) {
         return new Vec4l((long) (x / scale), (long) (y / scale), (long) (z / scale), (long) (w / scale));
     }
 
@@ -192,7 +202,7 @@ public class Vec4l extends IVec4<Long, Vec4l> {
 
     @Override
     public @NotNull Vec4d normalize() {
-        return new Vec4d(x, y, z, w).div(length());
+        return new Vec4d(x, y, z, w).divScalar(length());
     }
 
     @Override
