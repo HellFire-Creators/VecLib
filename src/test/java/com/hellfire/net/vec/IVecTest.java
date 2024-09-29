@@ -9,6 +9,8 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 class IVecTest {
 
     private static final ThreadLocalRandom rand = ThreadLocalRandom.current();
